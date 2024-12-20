@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import SignupView, Dashboard
 
 urlpatterns = [
+    path('api/register/', SignupView.as_view(), name='register'),
+    path('api/user/', Dashboard.as_view(), name='dash'),
 ]
